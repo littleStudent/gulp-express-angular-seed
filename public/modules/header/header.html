@@ -1,0 +1,15 @@
+<div class="navbar navbar-default" data-ng-controller="HeaderController">
+
+	<nav class="container collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+
+		<ul class="nav navbar-nav">
+			<li>
+				<a class="brand" href="/">expAng</a>
+			</li>
+			<li data-ng-repeat="item in menu" ui-route="/{{item.link}}"
+				ng-class="{active: $uiRoute}">
+				<a ui-sref="{{item.uiRoute}}">{{item.title}}</a>
+			</li>
+		</ul>
+	</nav>
+</div>

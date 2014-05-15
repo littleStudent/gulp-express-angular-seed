@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  ng-app="{{appName}}">
+
+<head>
+	<title>{{appName}}</title>
+
+	<!-- General META -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+	<!-- Fav Icon -->
+	<link href="/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.css">
+
+	<!-- inject:css -->
+	<!-- endinject -->
+
+	<!-- HTML5 Shim -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body class="ng-cloak">
+	<header data-ng-include="'views/header/header.html'"></header>
+	<section class="content">
+		<section class="container">
+			{% block content %}{% endblock %}
+		</section>
+	</section>
+
+	<!--Embedding The User Object-->
+	<script type="text/javascript">
+		window.user = {{ user | json | safe }};
+	</script>
+
+	<script type="text/javascript" src="/lib/jquery/jquery.js"></script>
+
+	<!--Bootstrap-->
+	<script type="text/javascript" src="/lib/bootstrap/js/bootstrap.js"></script>
+
+	<!--AngularJS-->
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/lib/angular-ui-router/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/lib/angular-animate/angular-animate.js"></script>
+
+	<!--Angular UI-->
+	<script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="/lib/angular-ui-utils/modules/route.js"></script>
+
+
+
+	<!-- inject:js -->
+	<!-- endinject -->
+
+
+</body>
+
+</html>
