@@ -4,6 +4,7 @@ angular.module('expAng', [
 	'ngRoute',
 	'ui.bootstrap',
 	'ui.router',
+	'ngRoute',
 	'expAng.system',
 	'expAng.config',
 	'expAng.route',

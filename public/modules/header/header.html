@@ -7,7 +7,7 @@
 				<a class="brand" href="/">expAng</a>
 			</li>
 			<li data-ng-repeat="item in menu" ui-route="/{{item.link}}"
-				ng-class="{active: $uiRoute}">
+				ui-sref-active="active">
 				<a ui-sref="{{item.uiRoute}}">{{item.title}}</a>
 			</li>
 		</ul>
