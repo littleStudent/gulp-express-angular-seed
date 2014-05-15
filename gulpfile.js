@@ -9,8 +9,9 @@ var rimraf = require('gulp-rimraf');
 var inject = require('gulp-inject');
 var livereload = require('gulp-livereload');
 var config = require('./config/config');
-var sass = require('gulp-sass');
+var bowerFiles = require('gulp-bower-files');
 var rsass = require('gulp-ruby-sass');
+var es = require('event-stream');
 
 
 // PRODUCTION CODE
@@ -38,15 +39,12 @@ gulp.task('cpy_js_production', ['cpy_js_initFirst_production'], function () {
 
 // DEVELOPMENT CODE
 
-//gulp.task('inject_js', function () {
-//	return gulp.src(['build/js/**/*.js', '/build/css/*.css'], {read: false})
-//		.pipe(inject('app/views/layout.html', {ignorePath: '/build'}))
-//		.pipe(gulp.dest('build/serverViews'));
-//});
 
 gulp.task('inject_js', function () {
 	return gulp.src('app/views/layout.html')
-		.pipe(inject(gulp.src(['build/js/**/*.js', 'build/css/*.css'], {read: false}), {ignorePath: '/build'}))
+		.pipe(inject(gulp.src(['build/lib/**/*.js', 'build/js/**/*.js', 'build/css/*.css', 'build/lib/**/*.css'],
+			{read: false}),
+		{ignorePath: '/build'}))
 		.pipe(gulp.dest('build/serverViews/'));
 });
 
@@ -68,7 +66,7 @@ gulp.task('cpy_css', function () {
 });
 
 gulp.task('cpy_lib', function () {
-	return gulp.src(['public/lib/**/'])
+	return bowerFiles()
 		.pipe(gulp.dest('build/lib/'));
 });
 

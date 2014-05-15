@@ -3,7 +3,6 @@ angular.module('expAng', [
 	'ngResource',
 	'ngRoute',
 	'ui.bootstrap',
-	'ui.route',
 	'ui.router',
 	'expAng.system',
 	'expAng.config',

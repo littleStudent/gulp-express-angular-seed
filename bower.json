@@ -1,0 +1,25 @@
+{
+  "name": "expAng",
+  "version": "0.0.0",
+  "homepage": "https://github.com/littleStudent/gulp-express-angular-seed",
+  "authors": [
+    "Thomas Sattlecker <thomas.sattlecker@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-cookies": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "angular-ui-router": "~0.2.10",
+    "angular-bootstrap": "~0.11.0",
+    "bootstrap": "~3.1.1"
+  }
+}
