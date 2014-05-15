@@ -123,7 +123,7 @@ gulp.task('run_Server', function () {
 		verbose: true,
 		script: 'server.js',
 		ext: 'js html scss',
-		ignore: ['./build/**']
+		ignore: ['./build', './bower_components', './node_modules']
 	}).on('change', ['server_restart']).on('restart', function () {
 		console.log('restarted!')
 	});
