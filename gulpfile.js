@@ -10,6 +10,7 @@ var inject = require('gulp-inject');
 var config = require('./config/config');
 var bowerFiles = require('gulp-bower-files');
 var rsass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 
 
 // PRODUCTION CODE
@@ -59,7 +60,7 @@ gulp.task('cpy_views', function () {
 
 gulp.task('cpy_css', function () {
 	return gulp.src([config.root + '/public/**/*.scss'])
-		.pipe(rsass({sourcemap: true}))
+		.pipe(sass({sourcemap: true}))
 		.pipe(gulp.dest('build/css/'));
 });
 
