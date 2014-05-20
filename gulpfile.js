@@ -10,6 +10,7 @@ var inject = require('gulp-inject');
 var config = require('./config/config');
 var bowerFiles = require('gulp-bower-files');
 var rsass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 
 
 // PRODUCTION CODE
@@ -41,8 +42,8 @@ gulp.task('cpy_js_production', ['cpy_js_initFirst_production'], function () {
 gulp.task('inject_js', function () {
 	return gulp.src('app/views/layout.html')
 		.pipe(inject(gulp.src(['build/lib/**/*.js', 'build/js/**/*.js', 'build/css/**/*.css', 'build/lib/**/*.css'],
-			{read: false}),
-		{ignorePath: '/build'}))
+				{read: false}),
+			{ignorePath: '/build'}))
 		.pipe(gulp.dest('build/serverViews/'));
 });
 
@@ -59,7 +60,7 @@ gulp.task('cpy_views', function () {
 
 gulp.task('cpy_css', function () {
 	return gulp.src([config.root + '/public/**/*.scss'])
-		.pipe(rsass({sourcemap: true}))
+		.pipe(sass({sourcemap: true}))
 		.pipe(gulp.dest('build/css/'));
 });
 
